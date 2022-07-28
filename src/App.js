@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
+const App = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ width: "90%", margin: "auto auto", paddingTop: "10%", textAlign: "center" }}>
+      <h1>WELCOM TO MERN STACK CRUD APP</h1>
+      <p>To create a post, please hit the Create Post button!</p>
+      <Button
+        style={{ width: "55%" }}
+        variant="outline-dark"
+        onClick={() => navigate("create")} >
+        CREATE POST
+      </Button>
     </div>
   );
 }
